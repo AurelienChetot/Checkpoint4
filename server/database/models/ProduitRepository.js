@@ -60,7 +60,7 @@ class ProduitRepository extends AbstractRepository {
       sousCategorieId,
     } = produit;
 
-    // Exécuter la requête SQL UPDATE pour modifier un produit existant dans la table "produits"
+    // Le U de CRUD - Opération de mise à jour
     const [result] = await this.database.query(
       `UPDATE ${this.table} SET nom = ?, description = ?, prix = ?, quantite = ?, image_url = ?, categorie_id = ?, sous_categorie_id = ? WHERE id = ?`,
       [
@@ -75,20 +75,19 @@ class ProduitRepository extends AbstractRepository {
       ]
     );
 
-    // Retourner true/false en fonction du succès de la mise à jour
     return result.affectedRows > 0;
   }
 
   // Le D de CRUD - Opération de suppression
   async delete(id) {
     // Exécuter la requête SQL DELETE pour supprimer un produit de la table "produits" par son ID
-    const [result] = await this.database.query(
+    const [destroy] = await this.database.query(
       `DELETE FROM ${this.table} WHERE id = ?`,
       [id]
     );
 
     // Retourner true/false en fonction du succès de la suppression
-    return result.affectedRows > 0;
+    return destroy.affectedRows > 0;
   }
 }
 

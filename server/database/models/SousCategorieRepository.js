@@ -5,12 +5,10 @@ class SousCategorieRepository extends AbstractRepository {
     super({ table: "souscategories" });
   }
 
-  async create(categorie) {
-    const { nom } = categorie;
-
+  async create(souscategorie) {
     const [result] = await this.database.query(
-      `INSERT INTO ${this.table} (nom) VALUES (?)`,
-      [nom]
+      `INSERT INTO ${this.table} (nom, categorie_id) VALUES (?, ?)`,
+      [souscategorie.nom, souscategorie.categorie_id]
     );
 
     return result.insertId;
@@ -30,8 +28,8 @@ class SousCategorieRepository extends AbstractRepository {
     return rows;
   }
 
-  async update(categorie) {
-    const { id, nom } = categorie;
+  async update(souscategorie) {
+    const { id, nom } = souscategorie;
 
     const [result] = await this.database.query(
       `UPDATE ${this.table} SET nom = ? WHERE id = ?`,
