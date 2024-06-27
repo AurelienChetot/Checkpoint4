@@ -27,9 +27,9 @@ CREATE TABLE produits (
     description TEXT,
     prix DECIMAL(10, 2) NOT NULL,
     quantite INT NOT NULL,
-    image_url VARCHAR(255),
-    categorie_id INT,
-    sous_categorie_id INT,
+    image_url VARCHAR(255) NOT NULL,
+    categorie_id INT NOT NULL,
+    sous_categorie_id INT NOT NULL,
     FOREIGN KEY (categorie_id) REFERENCES categories(id),
     FOREIGN KEY (sous_categorie_id) REFERENCES souscategories(id)
 );

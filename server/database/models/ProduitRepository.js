@@ -49,29 +49,18 @@ class ProduitRepository extends AbstractRepository {
 
   // Le U de CRUD - Opération de mise à jour
   async update(produit) {
-    const {
-      id,
-      nom,
-      description,
-      prix,
-      quantite,
-      imageUrl,
-      categorieId,
-      sousCategorieId,
-    } = produit;
-
     // Le U de CRUD - Opération de mise à jour
     const [result] = await this.database.query(
       `UPDATE ${this.table} SET nom = ?, description = ?, prix = ?, quantite = ?, image_url = ?, categorie_id = ?, sous_categorie_id = ? WHERE id = ?`,
       [
-        nom,
-        description,
-        prix,
-        quantite,
-        imageUrl,
-        categorieId,
-        sousCategorieId,
-        id,
+        produit.nom,
+        produit.description,
+        produit.prix,
+        produit.quantite,
+        produit.image_url,
+        produit.categorie_id,
+        produit.sous_categorie_id,
+        produit.id,
       ]
     );
 
