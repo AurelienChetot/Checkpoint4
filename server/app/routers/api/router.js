@@ -24,7 +24,7 @@ router.use("/produits", produitsRouter);
 
 const imageaccueilsRouter = require("./imageaccueils/router");
 
-router.use("/imageaccueils", imageaccueilsRouter);
+router.use("/imagesaccueil", imageaccueilsRouter);
 
 const commandesRouter = require("./commandes/router");
 

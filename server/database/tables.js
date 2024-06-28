@@ -5,6 +5,7 @@ const SousCategorieRepository = require("./models/SousCategorieRepository");
 const UtilisateurRepository = require("./models/UtilisateurRepository");
 const ArticlesCommandeRepository = require("./models/ArticlesCommandeRepository");
 const CommandeRepository = require("./models/CommandeRepository");
+const ImageAccueilRepository = require("./models/ImageAccueilRepository");
 
 // Create an empty object to hold data repositories for different tables
 const tables = {};
@@ -20,7 +21,7 @@ tables.souscategorie = new SousCategorieRepository();
 tables.utilisateurs = new UtilisateurRepository();
 tables.articlescommande = new ArticlesCommandeRepository();
 tables.commandes = new CommandeRepository();
-
+tables.imagesaccueil = new ImageAccueilRepository();
 /* ************************************************************************* */
 
 // Use a Proxy to customize error messages when trying to access a non-existing table
