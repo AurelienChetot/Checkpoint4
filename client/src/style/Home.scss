@@ -1,0 +1,5 @@
+@use "./Variables.scss" as *;
+
+.test {
+  background-color: $background-color-light;
+}
