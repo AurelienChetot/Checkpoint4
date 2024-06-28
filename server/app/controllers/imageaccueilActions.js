@@ -75,7 +75,7 @@ const add = async (req, res, next) => {
 const destroy = async (req, res, next) => {
   try {
     // Fetch a specific imagesaccueil from the database based on the provided ID
-    const imagesaccueil = await tables.imagesaccueil.read(req.params.id);
+    const imagesaccueil = await tables.imagesaccueil.delete(req.params.id);
 
     // If the imagesaccueil is not found, respond with HTTP 404 (Not Found)
     // Otherwise, respond with the imagesaccueil in JSON format

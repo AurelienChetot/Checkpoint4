@@ -1,5 +1,9 @@
 @use "./Variables.scss" as *;
 
-.test {
-  background-color: $background-color-light;
+.home-container {
+  margin-top: 30px;
+  width: 100vw;
+  img {
+    width: 100%;
+  }
 }

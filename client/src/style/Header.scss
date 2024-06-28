@@ -1,5 +1,17 @@
 @use "./Variables.scss" as *;
 
-.test {
-  background-color: $background-color-light;
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: black;
+  height: 80px;
+}
+.logo-market-style {
+  width: 80px;
+  height: 50px;
+}
+.logo-user-style {
+  width: 80px;
+  height: 50px;
 }
