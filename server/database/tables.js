@@ -3,6 +3,8 @@ const ProduitRepository = require("./models/ProduitRepository");
 const CategorieRepository = require("./models/CategorieRepository");
 const SousCategorieRepository = require("./models/SousCategorieRepository");
 const UtilisateurRepository = require("./models/UtilisateurRepository");
+const ArticlesCommandeRepository = require("./models/ArticlesCommandeRepository");
+const CommandeRepository = require("./models/CommandeRepository");
 
 // Create an empty object to hold data repositories for different tables
 const tables = {};
@@ -16,6 +18,8 @@ tables.produit = new ProduitRepository();
 tables.categorie = new CategorieRepository();
 tables.souscategorie = new SousCategorieRepository();
 tables.utilisateurs = new UtilisateurRepository();
+tables.articlescommande = new ArticlesCommandeRepository();
+tables.commandes = new CommandeRepository();
 
 /* ************************************************************************* */
 

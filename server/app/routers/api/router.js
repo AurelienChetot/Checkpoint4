@@ -8,7 +8,7 @@ const router = express.Router();
 
 const utilisateursRouter = require("./utilisateurs/router");
 
-router.use("/utilisateur", utilisateursRouter);
+router.use("/utilisateurs", utilisateursRouter);
 
 const categoriesRouter = require("./categories/router");
 
