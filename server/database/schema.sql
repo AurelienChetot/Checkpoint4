@@ -1,12 +1,21 @@
+CREATE TABLE roles (
+    id int PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    name VARCHAR(20) NOT NULL
+);
+
+INSERT INTO roles(id, name) VALUES (1, 'admin');
+INSERT INTO roles(id, name) VALUES (2, 'user');
+
 CREATE TABLE utilisateurs (
     id INT AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(255) NOT NULL,
     password VARCHAR(255) NOT NULL,
     email VARCHAR(255) NOT NULL UNIQUE,
-    role ENUM('user', 'admin') DEFAULT 'user',
     adresse VARCHAR(255),
     ville VARCHAR(255),
-    code_postal VARCHAR(20)
+    code_postal VARCHAR(20),
+    roles_id INT DEFAULT 2,
+    FOREIGN KEY (roles_id) REFERENCES roles(id)
 );
 
 CREATE TABLE categories (
