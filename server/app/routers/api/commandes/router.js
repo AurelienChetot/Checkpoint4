@@ -6,7 +6,7 @@ const router = express.Router();
 // Define Your API Routes Here
 /* ************************************************************************* */
 
-// Import item-related actions
+// Import commande-related actions
 const {
   browse,
   read,
@@ -15,10 +15,10 @@ const {
   destroy,
 } = require("../../../controllers/commandeActions");
 
-// Route to get a list of items
+// Route to get a list of commandes
 router.get("/", browse);
 
-// Route to get a specific item by ID
+// Route to get a specific commande by ID
 router.get("/:id", read);
 
 // Route to modify a specific user by ID

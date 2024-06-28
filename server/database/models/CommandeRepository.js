@@ -1,16 +1,18 @@
 const AbstractRepository = require("./AbstractRepository");
 
-class CategorieRepository extends AbstractRepository {
+class CommandeRepository extends AbstractRepository {
   constructor() {
-    super({ table: "categories" });
+    super({ table: "commandes" });
   }
 
-  async create(categorie) {
-    const { nom } = categorie;
-
+  async create(commande) {
     const [result] = await this.database.query(
-      `INSERT INTO ${this.table} (nom) VALUES (?)`,
-      [nom]
+      `INSERT INTO ${this.table} (utilisateur_id, prix_total, date_commande) VALUES (?, ?, ?)`,
+      [
+        commande.utilisateur_id,
+        commande.prix_total,
+        commande.date_commande || new Date(),
+      ]
     );
 
     return result.insertId;
@@ -30,8 +32,8 @@ class CategorieRepository extends AbstractRepository {
     return rows;
   }
 
-  async update(categorie) {
-    const { id, nom } = categorie;
+  async update(commande) {
+    const { id, nom } = commande;
 
     const [result] = await this.database.query(
       `UPDATE ${this.table} SET nom = ? WHERE id = ?`,
@@ -51,4 +53,4 @@ class CategorieRepository extends AbstractRepository {
   }
 }
 
-module.exports = CategorieRepository;
+module.exports = CommandeRepository;
