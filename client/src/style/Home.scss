@@ -3,6 +3,7 @@
 .home-container {
   margin-top: 30px;
   width: 100%;
+  background-color: $background-color-home;
   img {
     width: 100%;
     height: auto;
@@ -36,4 +37,25 @@
 }
 .carousel-custom {
   margin: 50px 50px;
+}
+.title-souscategorie {
+  position: relative;
+  text-decoration: underline;
+  bottom: -38px;
+  margin-left: 50px;
+  color: $background-color-light;
+}
+.text-data-container {
+  margin-top: 20px;
+}
+.text-data {
+  margin-top: 8px;
+}
+.span-style {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.carousel.carousel-slider .control-arrow:hover {
+  background: none !important;
 }

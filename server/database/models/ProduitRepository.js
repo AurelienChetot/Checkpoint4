@@ -40,10 +40,16 @@ class ProduitRepository extends AbstractRepository {
   }
 
   async readAll() {
-    // Exécuter la requête SQL SELECT pour récupérer tous les produits de la table "produits"
-    const [rows] = await this.database.query(`SELECT * FROM ${this.table}`);
-
-    // Retourner le tableau de produits
+    const query = `
+      SELECT
+        p.*,
+        c.nom AS categorie_nom,
+        sc.nom AS sous_categorie_nom
+      FROM ${this.table} AS p
+      JOIN categories AS c ON p.categorie_id = c.id
+      LEFT JOIN souscategories AS sc ON p.sous_categorie_id = sc.id
+    `;
+    const [rows] = await this.database.query(query);
     return rows;
   }
 
