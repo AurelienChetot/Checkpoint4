@@ -17,10 +17,14 @@ const router = createBrowserRouter([
         path: "/",
         element: <Home />,
         loader: async () => {
-          const response = await axios.get(
-            `http://localhost:3310/api/imagesaccueil`
-          );
-          return response.data;
+          const [imagesResponse, produitsResponse] = await Promise.all([
+            axios.get(`http://localhost:3310/api/imagesaccueil`),
+            axios.get(`http://localhost:3310/api/produits`),
+          ]);
+          return {
+            images: imagesResponse.data,
+            produits: produitsResponse.data,
+          };
         },
       },
     ],
