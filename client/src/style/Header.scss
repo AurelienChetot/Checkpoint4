@@ -1,6 +1,10 @@
 @use "./Variables.scss" as *;
 
 .header-container {
+  position: fixed;
+  top: 0;
+  z-index: 3;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -9,9 +13,93 @@
 }
 .logo-market-style {
   width: 80px;
-  height: 50px;
+  height: 60px;
 }
 .logo-user-style {
   width: 40px;
-  height: 50px;
+  height: 40px;
+}
+.logo-menu-style {
+  width: 40px;
+  height: 40px;
+}
+.menu-container {
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  img {
+    margin-left: 25px;
+  }
+}
+// Menu Burger
+.sidenav {
+  display: flex;
+  justify-content: center;
+  z-index: 3;
+  height: 100%;
+  width: 70%;
+  position: fixed;
+  top: -100%;
+  right: 0;
+  background-color: $background-color-light;
+  padding-top: 10px;
+  border-left: solid 2px black;
+  border-bottom: solid 2px black;
+  transition: top 0.3s ease;
+}
+
+.sidenav.active {
+  top: 0;
+}
+
+.sidenav a {
+  font-family: "roboto";
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1.3rem;
+  color: $text-color-dark;
+  display: block;
+  text-decoration: underline;
+}
+
+.sidenav a:hover {
+  color: #426ab2;
+}
+
+.sidenav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  list-style-type: none;
+  margin-top: 60px;
+  position: absolute;
+  left: 27px;
+}
+
+.sidenav .close {
+  border-radius: 5px;
+  position: absolute;
+  top: -20px;
+  right: 10px;
+  margin-top: 30px;
+  font-size: 25px;
+}
+
+.cursor-menu-close {
+  cursor: pointer;
+}
+
+.button-menu-style {
+  background: none;
+  border: none;
+}
+
+.container-list {
+  background: white;
+  width: 35vw;
+  height: 32px;
+  color: red;
+  border: solid 2px black;
+  border-radius: 10px;
+  text-align: center;
 }

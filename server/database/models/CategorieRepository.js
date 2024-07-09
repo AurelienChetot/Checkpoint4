@@ -26,8 +26,33 @@ class CategorieRepository extends AbstractRepository {
   }
 
   async readAll() {
-    const [rows] = await this.database.query(`SELECT * FROM ${this.table}`);
-    return rows;
+    try {
+      const [categoriesRows] = await this.database.query(
+        `SELECT * FROM ${this.table}`
+      );
+
+      const [souscategoriesRows] = await this.database.query(
+        `SELECT * FROM souscategories`
+      );
+
+      const categories = categoriesRows.map((category) => {
+        const souscategories = souscategoriesRows.filter(
+          (subcategory) => subcategory.categorie_id === category.id
+        );
+        return {
+          ...category,
+          souscategories: souscategories.map((subcategory) => ({
+            id: subcategory.id,
+            nom: subcategory.nom,
+          })),
+        };
+      });
+
+      return categories;
+    } catch (error) {
+      console.error("Error fetching categories:", error);
+      throw error;
+    }
   }
 
   async update(categorie) {

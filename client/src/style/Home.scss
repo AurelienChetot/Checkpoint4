@@ -1,7 +1,7 @@
 @use "./Variables.scss" as *;
 
 .home-container {
-  margin-top: 30px;
+  margin-top: 150px;
   width: 100%;
   background-color: $background-color-home;
   img {
@@ -17,6 +17,7 @@
   p {
     margin-top: 30px;
     text-align: center;
+    font-size: 1.2rem;
   }
 }
 
@@ -29,6 +30,7 @@
     margin-top: 30px;
     margin-bottom: 30px;
     text-align: center;
+    font-size: 1.2rem;
   }
 }
 .product-item {
@@ -43,6 +45,7 @@
   text-decoration: underline;
   bottom: -38px;
   margin-left: 50px;
+  font-size: 1.7rem;
   color: $background-color-light;
 }
 .text-data-container {
@@ -50,6 +53,7 @@
 }
 .text-data {
   margin-top: 8px;
+  font-size: 1.2rem;
 }
 .span-style {
   font-weight: bold;
