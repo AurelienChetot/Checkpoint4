@@ -14,7 +14,11 @@ function ListeProduits() {
         const response = await axios.get(`http://localhost:3310/api/produits`, {
           params: { sous_categorie_id: id },
         });
-        setProduits(response.data);
+        const filteredProduits = response.data.filter(
+          (produit) => produit.sous_categorie_id === parseInt(id, 10)
+        );
+
+        setProduits(filteredProduits);
       } catch (error) {
         console.error("Error fetching produits:", error);
       }
