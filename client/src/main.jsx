@@ -8,6 +8,7 @@ import App from "./App";
 // Import des pages
 
 import Home from "./pages/Home";
+import ListeProduits from "./pages/ListeProduits";
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
             produits: produitsResponse.data,
           };
         },
+      },
+      {
+        path: "/listeproduits/:id",
+        element: <ListeProduits />,
       },
     ],
   },

@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 
 import LOGO from "../assets/svg/logoyourmarket.svg";
@@ -62,7 +63,6 @@ function Header() {
                 </option>
               ))}
             </select>
-            {/* Affichage des sous-catégories */}
             {selectedCategory &&
               categories.find((cat) => cat.id === selectedCategory)
                 ?.souscategories && (
@@ -71,12 +71,12 @@ function Header() {
                     .find((cat) => cat.id === selectedCategory)
                     .souscategories.map((subcategory) => (
                       <li key={subcategory.id}>
-                        <a
-                          href={`/produits/${subcategory.id}`}
+                        <Link
+                          to={`/listeproduits/${subcategory.id}`}
                           onClick={() => handleSubcategoryClick(subcategory.id)}
                         >
                           {subcategory.nom}
-                        </a>
+                        </Link>
                       </li>
                     ))}
                 </ul>
