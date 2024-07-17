@@ -43,9 +43,13 @@ function Header() {
 
   return (
     <div className="header-container">
-      <img className="logo-market-style" src={LOGO} alt="Logo-Your-Market" />
+      <Link to="/">
+        <img className="logo-market-style" src={LOGO} alt="Logo-Your-Market" />
+      </Link>
       <div className="menu-container">
-        <img className="logo-user-style" src={USER} alt="icone-user" />
+        <Link to="/Login">
+          <img className="logo-user-style" src={USER} alt="icone-user" />
+        </Link>
         <div className={menuOpen ? "sidenav active" : "sidenav"}>
           <button type="button" className="close" onClick={toggleMenu}>
             <span className="cursor-menu-close">❌</span>

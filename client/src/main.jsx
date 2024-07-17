@@ -9,8 +9,13 @@ import App from "./App";
 
 import Home from "./pages/Home";
 import ListeProduits from "./pages/ListeProduits";
+import Login from "./pages/Login";
 
 const router = createBrowserRouter([
+  {
+    path: "/Login",
+    element: <Login />,
+  },
   {
     element: <App />,
     children: [
