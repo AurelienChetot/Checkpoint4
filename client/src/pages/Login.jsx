@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import LOGIN from "../assets/images/login.jpg";
 
 export default function Login() {
@@ -21,6 +22,9 @@ export default function Login() {
         <button className="login-button" type="submit">
           Connexion
         </button>
+        <Link className="link-style" to="/Account">
+          <p className="no-account-style">Pas de compte ? Enrengistrez-vous </p>
+        </Link>
       </div>
     </div>
   );

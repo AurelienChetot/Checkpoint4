@@ -11,7 +11,7 @@
   object-position: center;
 }
 .text-login-container {
-  margin-top: 10px;
+  margin-top: 70px;
   text-align: center;
 }
 
@@ -21,7 +21,7 @@
 }
 
 .form-group {
-  margin: 7vw 15vw;
+  margin: 5vw 15vw;
 }
 
 .mail-container {
@@ -66,4 +66,12 @@
 }
 .login-button:active {
   background-color: $background-color-light-click;
+}
+.no-account-style {
+  margin-top: 10px;
+  font-weight: bold;
+}
+.link-style {
+  text-decoration: none;
+  color: $background-color-light;
 }
