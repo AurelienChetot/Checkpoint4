@@ -81,6 +81,16 @@ class UtilisateurRepository extends AbstractRepository {
     // Retourner true/false en fonction du succès de la suppression
     return destroy.affectedRows > 0;
   }
+
+  async readByEmailWithPassword(email) {
+    const [rows] = await this.database.query(
+      `SELECT * FROM ${this.table} WHERE email = ?`,
+      [email]
+    );
+
+    // Retourner la première ligne du résultat, qui représente le user
+    return rows[0];
+  }
 }
 
 module.exports = UtilisateurRepository;

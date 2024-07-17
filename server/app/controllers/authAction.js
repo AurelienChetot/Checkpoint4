@@ -6,8 +6,9 @@ const tables = require("../../database/tables");
 
 const login = async (req, res, next) => {
   try {
-    // Fetch a specific user from the database based on the provided email
-    const user = await tables.user.readByEmailWithPassword(req.body.email);
+    const user = await tables.utilisateurs.readByEmailWithPassword(
+      req.body.email
+    );
 
     if (user == null) {
       res.sendStatus(422);
@@ -15,13 +16,12 @@ const login = async (req, res, next) => {
     }
 
     const verified = await argon2.verify(
-      user.hashed_password,
+      user.hashedPassword,
       req.body.password
     );
 
     if (verified) {
-      // Respond with the user and a signed token in JSON format (but without the hashed password)
-      delete user.hashed_password;
+      delete user.hashedPassword;
 
       const token = await jwt.sign(
         { userId: user.id },
@@ -39,22 +39,16 @@ const login = async (req, res, next) => {
       res.sendStatus(420);
     }
   } catch (err) {
-    // Pass any errors to the error-handling middleware
     next(err);
   }
 };
 const add = async (req, res, next) => {
-  // Extract the user data from the request body
   const user = req.body;
 
   try {
-    // Insert the user into the database
-    const insertId = await tables.user.create(user);
-
-    // Respond with HTTP 201 (Created) and the ID of the newly inserted user
+    const insertId = await tables.utilisateurs.create(user);
     res.status(201).json({ insertId });
   } catch (err) {
-    // Pass any errors to the error-handling middleware
     next(err);
   }
 };

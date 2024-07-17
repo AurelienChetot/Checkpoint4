@@ -34,6 +34,10 @@ const articlescommandesRouter = require("./articlescommandes/router");
 
 router.use("/articlescommandes", articlescommandesRouter);
 
+const authRouter = require("./auths/router");
+
+router.use("/auth", authRouter);
+
 /* ************************************************************************* */
 
 module.exports = router;
