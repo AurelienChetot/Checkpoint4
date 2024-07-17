@@ -13,8 +13,7 @@ export default function Account() {
     email: "",
     adresse: "",
     ville: "",
-    codePostal: "", // Renommé en camelCase
-    password: "",
+    codePostal: "",
     confirmPassword: "",
   });
 
@@ -60,7 +59,6 @@ export default function Account() {
   const handleSubmit = async () => {
     if (!validateForm()) return;
     try {
-      // Supprimez confirmPassword de formData et mappez les noms des champs correctement
       const { confirmPassword, codePostal, ...userData } = formData;
       const dataToSend = { ...userData, code_postal: codePostal };
 
