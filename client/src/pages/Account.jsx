@@ -5,6 +5,7 @@ import toast, { Toaster } from "react-hot-toast";
 
 export default function Account() {
   const notify = () => toast("Votre compte a bien été créé.");
+  const notifyError = (message) => toast.error(message);
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     username: "",
@@ -12,7 +13,7 @@ export default function Account() {
     email: "",
     adresse: "",
     ville: "",
-    code_postal: "",
+    codePostal: "", // Renommé en camelCase
     password: "",
     confirmPassword: "",
   });
@@ -25,20 +26,65 @@ export default function Account() {
     }));
   };
 
+  const validateForm = () => {
+    const {
+      username,
+      lastname,
+      email,
+      adresse,
+      ville,
+      codePostal,
+      password,
+      confirmPassword,
+    } = formData;
+    if (
+      !username ||
+      !lastname ||
+      !email ||
+      !adresse ||
+      !ville ||
+      !codePostal ||
+      !password ||
+      !confirmPassword
+    ) {
+      notifyError("Veuillez remplir tous les champs.");
+      return false;
+    }
+    if (password !== confirmPassword) {
+      notifyError("Les mots de passe ne correspondent pas.");
+      return false;
+    }
+    return true;
+  };
+
   const handleSubmit = async () => {
+    if (!validateForm()) return;
     try {
+      // Supprimez confirmPassword de formData et mappez les noms des champs correctement
+      const { confirmPassword, codePostal, ...userData } = formData;
+      const dataToSend = { ...userData, code_postal: codePostal };
+
       const response = await axios.post(
         "http://localhost:3310/api/utilisateurs",
-        formData
+        dataToSend
       );
-      setTimeout(() => {
-        navigate(`/Login`);
-      }, 2000);
-      return response;
+
+      if (response.status === 201) {
+        notify();
+        setTimeout(() => {
+          navigate("/Login");
+        }, 2000);
+      } else {
+        throw new Error(
+          "Une erreur s'est produite lors de la création du compte !"
+        );
+      }
     } catch (error) {
-      return error;
+      notifyError("Une erreur s'est produite lors de la création du compte !");
+      console.error("Erreur:", error);
     }
   };
+
   return (
     <div className="account-container">
       <div className="account-container-form">
@@ -99,13 +145,13 @@ export default function Account() {
           />
         </div>
         <div className="form-container">
-          <label htmlFor="code_postal">Votre code postal</label>
+          <label htmlFor="codePostal">Votre code postal</label>
           <input
             type="text"
-            name="code_postal"
-            id="code_postal"
+            name="codePostal"
+            id="codePostal"
             placeholder="Votre code postal"
-            value={formData.code_postal}
+            value={formData.codePostal}
             onChange={handleChange}
           />
         </div>
@@ -136,7 +182,6 @@ export default function Account() {
           type="button"
           onClick={() => {
             handleSubmit();
-            notify();
           }}
         >
           S'inscrire
