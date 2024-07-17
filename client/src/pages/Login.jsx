@@ -36,7 +36,7 @@ export default function Login() {
       notifyUser();
 
       setTimeout(() => {
-        navigate(`/Profil${userData.user.id}`);
+        navigate(`/Profil/${userData.user.id}`);
       }, 2000);
     } catch (error) {
       console.error(error.message);

@@ -11,6 +11,7 @@ import Home from "./pages/Home";
 import ListeProduits from "./pages/ListeProduits";
 import Login from "./pages/Login";
 import Account from "./pages/Account";
+import Profil from "./pages/Profil";
 
 const router = createBrowserRouter([
   {
@@ -41,6 +42,27 @@ const router = createBrowserRouter([
       {
         path: "/listeproduits/:id",
         element: <ListeProduits />,
+      },
+      {
+        path: "/profil/:id",
+        element: <Profil />,
+        loader: async ({ params }) => {
+          const token = localStorage.getItem("token");
+          try {
+            const response = await axios.get(
+              `${import.meta.env.VITE_API_URL}/api/utilisateurs/${params.id}`,
+              {
+                headers: {
+                  Authorization: `Bearer ${token}`,
+                },
+              }
+            );
+            return response.data;
+          } catch (error) {
+            console.error(error);
+            throw error;
+          }
+        },
       },
     ],
   },
