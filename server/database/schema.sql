@@ -23,12 +23,23 @@ CREATE TABLE categories (
     nom VARCHAR(255) NOT NULL
 );
 
+INSERT INTO categories(id, nom) VALUES 
+    (1, "Textile"),
+    (2, "Alimentaire"),
+    (3, "Informatique");
+
 CREATE TABLE souscategories (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nom VARCHAR(255) NOT NULL,
     categorie_id INT,
     FOREIGN KEY (categorie_id) REFERENCES categories(id)
 );
+
+INSERT INTO souscategories(id, nom, categorie_id) VALUES 
+    (1, "Chaussures", 1),
+    (2, "Produits Frais", 2),
+    (3, "Accessoires informatique", 3);
+
 
 CREATE TABLE produits (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -43,11 +54,26 @@ CREATE TABLE produits (
     FOREIGN KEY (sous_categorie_id) REFERENCES souscategories(id)
 );
 
+INSERT INTO produits(id, nom, description, prix, quantite, image_url, categorie_id, sous_categorie_id) VALUES
+    (1, 'AirMax90', 'Nike Best Seller', 120.00, 15, 'https://i.imgur.com/S6FiaZQ.png', 1, 1),
+    (2, 'Converse', 'The Converse End Of Season', 56.25, 10, 'https://i.imgur.com/6fhRCUu.png', 1, 1),
+    (3, 'Steack Charal x10', 'Steack Format Familial, Provenance France', 11.25, 30, 'https://i.imgur.com/KwH0hFr.png', 2, 2),
+    (4, 'DANONE Velouté x16', 'Pack Familial Yaourt Velouté Fruix Fraise, Framboise, Abricot', 5.45, 20, 'https://i.imgur.com/UMsCoj8.png', 2, 2),
+    (5, 'Vulcan Roccat', 'Le clavier gaming mécanique Vulcan de ROCCAT combine innovation technologique, solidité et éclairage.', 122.99, 10, 'https://i.imgur.com/LFAcd4S.png', 3, 3),
+    (6, 'Logitech G502 LIGHTSPEED', 'Poids et Couleurs entièrement Personnalisables sans Fil', 79.95, 15, 'https://i.imgur.com/kYcbDDz.png', 3, 3);
+
+
 CREATE TABLE imagesaccueil (
     id INT AUTO_INCREMENT PRIMARY KEY,
     image_url VARCHAR(255) NOT NULL,
     est_promotion BOOLEAN DEFAULT FALSE
 );
+
+INSERT INTO imagesaccueil(id, image_url, est_promotion) VALUES
+    (1, 'https://i.imgur.com/YJWxkGD.png', 0),
+    (2, 'https://i.imgur.com/1v3wE7u.gif', 0),
+    (3, 'https://i.imgur.com/TsyfWPI.gif', 0);
+
 
 CREATE TABLE commandes (
     id INT AUTO_INCREMENT PRIMARY KEY,
