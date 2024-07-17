@@ -9,22 +9,26 @@ class UtilisateurRepository extends AbstractRepository {
 
   // Le C de CRUD - Opération de création
   async create(utilisateur) {
-    // Exécuter la requête SQL INSERT pour ajouter un nouveau user à la table "users"
-    const [result] = await this.database.query(
-      `INSERT INTO ${this.table} SET username = ?, lastname = ? , password = ?, email = ?, adresse = ?, ville = ?, code_postal = ?`,
-      [
-        utilisateur.username,
-        utilisateur.lastname,
-        utilisateur.password,
-        utilisateur.email,
-        utilisateur.adresse,
-        utilisateur.ville,
-        utilisateur.code_postal,
-      ]
-    );
+    try {
+      // Exécuter la requête SQL INSERT pour ajouter un nouveau utilisateur à la table "utilisateurs"
+      const [result] = await this.database.query(
+        `INSERT INTO ${this.table} (username, lastname, hashedPassword, email, adresse, ville, code_postal) VALUES (?, ?, ?, ?, ?, ?, ?)`,
+        [
+          utilisateur.username,
+          utilisateur.lastname,
+          utilisateur.hashedPassword,
+          utilisateur.email,
+          utilisateur.adresse,
+          utilisateur.ville,
+          utilisateur.code_postal,
+        ]
+      );
 
-    // Retourner l'ID du user nouvellement inséré
-    return result.insertId;
+      // Retourner l'ID de l'utilisateur nouvellement inséré
+      return result.insertId;
+    } catch (error) {
+      return error;
+    }
   }
 
   // Le R de CRUD - Opérations de lecture

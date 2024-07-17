@@ -10,7 +10,7 @@ CREATE TABLE utilisateurs (
     id INT AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(255) NOT NULL,
     lastname VARCHAR(255) NOT NULL,
-    password VARCHAR(255) NOT NULL,
+    hashedPassword VARCHAR(255) NOT NULL,
     email VARCHAR(255) NOT NULL UNIQUE,
     adresse VARCHAR(255),
     ville VARCHAR(255),
@@ -18,6 +18,10 @@ CREATE TABLE utilisateurs (
     roles_id INT DEFAULT 2,
     FOREIGN KEY (roles_id) REFERENCES roles(id)
 );
+
+
+INSERT INTO utilisateurs (username, lastname, hashedPassword, email, adresse, ville, code_postal, roles_id)
+VALUES ('Admin', 'Admin', '$argon2id$v=19$m=19456,t=2,p=1$QJiHcpYuLVwwibnUM3akCw$y6g6U4EtxYZ9CrkHXAo36EK8FmsbsBOSUlo2mEIwUDg', 'admin@gmail.com', '1 Rue Robert Desnos', 'Chalon sur Saône', '71100', 1);
 
 CREATE TABLE categories (
     id INT AUTO_INCREMENT PRIMARY KEY,
