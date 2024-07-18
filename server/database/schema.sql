@@ -67,15 +67,16 @@ INSERT INTO produits(id, nom, description, prix, quantite, image_url, categorie_
     (4, 'Ochenta Escaprins', 'Talons hauts à bord rond', 48.99, 10, 'https://i.imgur.com/vhXggiF.png', 1, 1),
     (5, 'ALDO Escaprins', 'Sandales Cagey Wedge avec sangle de cheville', 72.99, 15, 'https://i.imgur.com/PhDILEt.png', 1, 1),
     (6, 'Sandales', 'Sandales pour femme Orthopédique Antidérapantes, idéale pour la marche', 10.99, 20, 'https://i.imgur.com/tCyasZ1.png', 1, 1),
-    (7, 'Steack Charal x10', 'Steack Format Familial, Provenance France', 11.25, 30, 'https://i.imgur.com/KwH0hFr.png', 2, 3),
-    (8, 'DANONE Velouté x16', 'Pack Familial Yaourt Velouté Fruix Fraise, Framboise, Abricot', 5.45, 20, 'https://i.imgur.com/yiIlkF8.png', 2, 3),
-    (9, 'Croissants Pasquier x8', 'Découvrez le plaisir authentique des Croissants Pasquier en pack de 8, parfait pour toute la famille. Ces croissants, préparés avec soin et selon la tradition française.', 2.55, 25, 'https://i.imgur.com/VegY22j.png', 2, 3),
-    (10, 'Ovomaltine', 'Pâte à tartiner, idéale pour accompagner vos petits-déjeuners sur du pain ou des crêpes.', 4.20, 30, 'https://i.imgur.com/tvGyEra.png', 2, 3),
-    (11, 'Vulcan Roccat', 'Le clavier gaming mécanique Vulcan de ROCCAT combine innovation technologique, solidité et éclairage.', 122.99, 10, 'https://i.imgur.com/LFAcd4S.png', 3, 4),
-    (12, 'Logitech G502 LIGHTSPEED', 'Poids et Couleurs entièrement Personnalisables sans Fil', 79.95, 15, 'https://i.imgur.com/8hUkcab.png', 3, 4),
-    (13, 'Samsung Ecran PC Odyssey G55T 34 pouces', 'Écran PC de 34 pouces Incurvé 1000R, doté de la Dalle VA de 1ms avec une résolution UWQHD 3440x1440 pour vos jeux préférés. ', 439.00, 5, 'https://i.imgur.com/J0VHq1W.png', 3, 4),
-    (14, 'HUANUO Support Ecran PC double', 'Support d''écran double 13-34 pouces. Grâce à ce support, vous gagnerez en place sur votre bureau ainsi qu''en egronomie ', 69.99, 13, 'https://i.imgur.com/N3EwmX4.png', 3, 4),
-    (15, 'Devoko Bureau Assis Debout Électrique 160x80cm', 'La hauteur du bureau est réglable entre 72 cm et 118 cm. Il suffit d''appuyer sur un bouton pour régler le bureau à la hauteur souhaitée. Il emporte également un port Type C pour recharger vos appareils à tout moment.', 259.99, 8, 'https://i.imgur.com/Y1labaT.png', 3, 4);
+    (7, 'Tommy Hilfiger Taille M', 'Ce t-shirt basique se distingue par son coton bio, agréable et confortable, et il convient pour les moments de détente. Le branding Tommy Hilfiger apporte la touche finale à ce modèle.', 24.95, 30, 'https://i.imgur.com/WoDCc2K.png', 1, 2),
+    (8, 'Steack Charal x10', 'Steack Format Familial, Provenance France', 11.25, 30, 'https://i.imgur.com/KwH0hFr.png', 2, 3),
+    (9, 'DANONE Velouté x16', 'Pack Familial Yaourt Velouté Fruix Fraise, Framboise, Abricot', 5.45, 20, 'https://i.imgur.com/yiIlkF8.png', 2, 3),
+    (10, 'Croissants Pasquier x8', 'Découvrez le plaisir authentique des Croissants Pasquier en pack de 8, parfait pour toute la famille. Ces croissants, préparés avec soin et selon la tradition française.', 2.55, 25, 'https://i.imgur.com/VegY22j.png', 2, 3),
+    (11, 'Ovomaltine', 'Pâte à tartiner, idéale pour accompagner vos petits-déjeuners sur du pain ou des crêpes.', 4.20, 30, 'https://i.imgur.com/tvGyEra.png', 2, 3),
+    (12, 'Vulcan Roccat', 'Le clavier gaming mécanique Vulcan de ROCCAT combine innovation technologique, solidité et éclairage.', 122.99, 10, 'https://i.imgur.com/LFAcd4S.png', 3, 4),
+    (13, 'Logitech G502 LIGHTSPEED', 'Poids et Couleurs entièrement Personnalisables sans Fil', 79.95, 15, 'https://i.imgur.com/8hUkcab.png', 3, 4),
+    (14, 'Samsung Ecran PC Odyssey G55T 34 pouces', 'Écran PC de 34 pouces Incurvé 1000R, doté de la Dalle VA de 1ms avec une résolution UWQHD 3440x1440 pour vos jeux préférés. ', 439.00, 5, 'https://i.imgur.com/J0VHq1W.png', 3, 4),
+    (15, 'HUANUO Support Ecran PC double', 'Support d''écran double 13-34 pouces. Grâce à ce support, vous gagnerez en place sur votre bureau ainsi qu''en egronomie ', 69.99, 13, 'https://i.imgur.com/N3EwmX4.png', 3, 4),
+    (16, 'Devoko Bureau Assis Debout Électrique 160x80cm', 'La hauteur du bureau est réglable entre 72 cm et 118 cm. Il suffit d''appuyer sur un bouton pour régler le bureau à la hauteur souhaitée. Il emporte également un port Type C pour recharger vos appareils à tout moment.', 259.99, 8, 'https://i.imgur.com/Y1labaT.png', 3, 4);
 
 CREATE TABLE imagesaccueil (
     id INT AUTO_INCREMENT PRIMARY KEY,
