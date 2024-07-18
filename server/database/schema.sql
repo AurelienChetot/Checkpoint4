@@ -73,7 +73,7 @@ INSERT INTO produits(id, nom, description, prix, quantite, image_url, categorie_
     (11, 'Vulcan Roccat', 'Le clavier gaming mécanique Vulcan de ROCCAT combine innovation technologique, solidité et éclairage.', 122.99, 10, 'https://i.imgur.com/LFAcd4S.png', 3, 3),
     (12, 'Logitech G502 LIGHTSPEED', 'Poids et Couleurs entièrement Personnalisables sans Fil', 79.95, 15, 'https://i.imgur.com/8hUkcab.png', 3, 3),
     (13, 'Samsung Ecran PC Odyssey G55T 34 pouces', 'Écran PC de 34 pouces Incurvé 1000R, doté de la Dalle VA de 1ms avec une résolution UWQHD 3440x1440 pour vos jeux préférés. ', 439.00, 5, 'https://i.imgur.com/J0VHq1W.png', 3, 3),
-    (14, 'HUANUO Support Ecran PC 2', 'Support d''écran double 13-34 pouces. Grâce à ce support, vous gagnerez en place sur votre bureau ainsi qu''en egronomie ', 69.99, 13, 'https://i.imgur.com/N3EwmX4.png', 3, 3),
+    (14, 'HUANUO Support Ecran PC double', 'Support d''écran double 13-34 pouces. Grâce à ce support, vous gagnerez en place sur votre bureau ainsi qu''en egronomie ', 69.99, 13, 'https://i.imgur.com/N3EwmX4.png', 3, 3),
     (15, 'Devoko Bureau Assis Debout Électrique 160x80cm', 'La hauteur du bureau est réglable entre 72 cm et 118 cm. Il suffit d''appuyer sur un bouton pour régler le bureau à la hauteur souhaitée. Il emporte également un port Type C pour recharger vos appareils à tout moment.', 259.99, 8, 'https://i.imgur.com/Y1labaT.png', 3, 3);
 
 CREATE TABLE imagesaccueil (
