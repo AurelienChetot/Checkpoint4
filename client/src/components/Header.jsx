@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import useAuth from "../contexts/AuthContext";
 
 import LOGO from "../assets/svg/logoyourmarket.svg";
 import USER from "../assets/svg/user.svg";
@@ -10,6 +11,8 @@ function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [categories, setCategories] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState(null);
+  const [userId, setUserId] = useState(null); // Nouvelle ligne
+  const isAuthenticated = useAuth();
 
   const fetchCategories = async () => {
     try {
@@ -22,6 +25,13 @@ function Header() {
 
   useEffect(() => {
     fetchCategories();
+    const token = localStorage.getItem("token");
+    if (token) {
+      const user = JSON.parse(localStorage.getItem("user"));
+      if (user && user.id) {
+        setUserId(user.id);
+      }
+    }
   }, []);
 
   const toggleMenu = () => {
@@ -47,7 +57,7 @@ function Header() {
         <img className="logo-market-style" src={LOGO} alt="Logo-Your-Market" />
       </Link>
       <div className="menu-container">
-        <Link to="/Login">
+        <Link to={isAuthenticated && userId ? `/Profil/${userId}` : "/Login"}>
           <img className="logo-user-style" src={USER} alt="icone-user" />
         </Link>
         <div className={menuOpen ? "sidenav active" : "sidenav"}>
