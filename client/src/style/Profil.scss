@@ -4,6 +4,24 @@
   margin-top: 100px;
 }
 
+.logout-button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.logout-button {
+  padding: 5px;
+  width: 30vw;
+  color: white;
+  border-radius: 5px;
+  border: solid 1px $background-color-dark;
+  background-color: $background-color-light;
+}
+.logout-button:active {
+  background-color: $background-color-light-click;
+}
+
 .profil-text {
   text-align: center;
   font-size: 1.5rem;

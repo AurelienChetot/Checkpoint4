@@ -63,6 +63,10 @@ function ListeProduits() {
                   <span className="text-style-span">Description</span>:{" "}
                   {produit.description}
                 </ol>
+                <ol>
+                  <span className="text-style-span">Quantité disponible</span>:{" "}
+                  {produit.quantite}
+                </ol>
                 <div className="price-button-container">
                   <ol className="background-price">{produit.prix}€</ol>
                   <button className="button-style" type="button">

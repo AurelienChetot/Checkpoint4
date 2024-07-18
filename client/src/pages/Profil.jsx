@@ -1,12 +1,29 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 
 export default function Profil() {
   const utilisateurs = useLoaderData();
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    // Vider le localStorage
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
+
+    // Rediriger vers la page de connexion
+    setTimeout(() => {
+      navigate(`/Login`);
+    }, 2000);
+  };
 
   return (
     <div className="profil-container">
       <p className="profil-text">Votre Profil</p>
       <p className="text-profil-user">Hello {utilisateurs.username} 👋 !</p>
+      <div className="logout-button-container">
+        <button type="button" className="logout-button" onClick={handleLogout}>
+          Se déconnecter
+        </button>
+      </div>
       <div className="profil-card-container">
         <p className="text-profil-user">
           <span className="span-style">Votre prénom :</span>{" "}
