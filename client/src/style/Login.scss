@@ -63,8 +63,12 @@
   border-radius: 5px;
   border: solid 1px $background-color-dark;
   background-color: $background-color-light;
+  cursor: pointer;
 }
 .login-button:active {
+  background-color: $background-color-light-click;
+}
+.login-button:hover {
   background-color: $background-color-light-click;
 }
 .no-account-style {

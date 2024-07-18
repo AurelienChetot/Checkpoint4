@@ -18,7 +18,9 @@ export default function Profil() {
   return (
     <div className="profil-container">
       <p className="profil-text">Votre Profil</p>
-      <p className="text-profil-user">Hello {utilisateurs.username} 👋 !</p>
+      <p className="text-profil-user-welcome">
+        Hello {utilisateurs.username} 👋 !
+      </p>
       <div className="logout-button-container">
         <button type="button" className="logout-button" onClick={handleLogout}>
           Se déconnecter

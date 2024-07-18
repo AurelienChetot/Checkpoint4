@@ -17,8 +17,12 @@
   border-radius: 5px;
   border: solid 1px $background-color-dark;
   background-color: $background-color-light;
+  cursor: pointer;
 }
 .logout-button:active {
+  background-color: $background-color-light-click;
+}
+.logout-button:hover {
   background-color: $background-color-light-click;
 }
 
@@ -35,6 +39,13 @@
   gap: 10px;
   margin-top: 10px;
   text-align: center;
+  font-weight: bold;
+}
+
+.text-profil-user-welcome {
+  text-align: center;
+  margin-top: 10px;
+  font-weight: bold;
 }
 
 .span-style {
@@ -57,5 +68,8 @@
   .profil-card-container {
     margin: 5vh 30vw;
     margin-bottom: 6.9vh;
+  }
+  .text-profil-user-welcome {
+    font-size: 1.5rem;
   }
 }
