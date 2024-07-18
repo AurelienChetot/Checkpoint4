@@ -4,8 +4,22 @@ import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
 
 export default function Account() {
-  const notify = () => toast("Votre compte a bien été créé.");
-  const notifyError = (message) => toast.error(message);
+  const notify = () =>
+    toast("Votre compte a bien été créé.", {
+      style: {
+        border: "solid 2px #000000",
+        backgroundColor: "#fffff",
+        color: "#000000",
+      },
+    });
+  const notifyError = (message) =>
+    toast.error(message, {
+      style: {
+        border: "solid 2px #000000",
+        backgroundColor: "#fffff",
+        color: "#000000",
+      },
+    });
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     username: "",
@@ -86,7 +100,7 @@ export default function Account() {
   return (
     <div className="account-container">
       <div className="account-container-form">
-        <p className="account-style">S'enregistrer</p>
+        <p className="account-style">Créez un compte</p>
         <div className="form-container">
           <label htmlFor="username">Votre Prénom</label>
           <input

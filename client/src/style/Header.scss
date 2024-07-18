@@ -63,7 +63,7 @@
 }
 
 .sidenav a:hover {
-  color: #426ab2;
+  color: $background-color-dark;
 }
 
 .sidenav ul {
@@ -102,4 +102,9 @@
   border: solid 2px black;
   border-radius: 10px;
   text-align: center;
+}
+@media only screen and (min-width: 1080px) {
+  .sidenav {
+    width: 50%;
+  }
 }

@@ -53,3 +53,9 @@
   background-color: $background-color-light;
   color: $text-color-dark;
 }
+@media only screen and (min-width: 1080px) {
+  .profil-card-container {
+    margin: 5vh 30vw;
+    margin-bottom: 6.9vh;
+  }
+}

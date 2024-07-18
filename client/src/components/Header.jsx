@@ -11,7 +11,7 @@ function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [categories, setCategories] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState(null);
-  const [userId, setUserId] = useState(null); // Nouvelle ligne
+  const [userId, setUserId] = useState(null);
   const isAuthenticated = useAuth();
 
   const fetchCategories = async () => {

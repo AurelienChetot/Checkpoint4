@@ -40,9 +40,9 @@ function ListeProduits() {
   return (
     <div>
       <h1>Liste des Produits</h1>
-      <ul className="list-product-container">
+      <div className="list-product-container">
         {produits.map((produit) => (
-          <li key={produit.id}>
+          <p key={produit.id}>
             <div className="text-product-container">
               <button
                 className="style-button-display"
@@ -58,26 +58,26 @@ function ListeProduits() {
               </button>
 
               <div className="text-container">
-                <ol className="product-name-style">{produit.nom}</ol>
-                <ol>
+                <p className="product-name-style">{produit.nom}</p>
+                <p>
                   <span className="text-style-span">Description</span>:{" "}
                   {produit.description}
-                </ol>
-                <ol>
+                </p>
+                <p>
                   <span className="text-style-span">Quantité disponible</span>:{" "}
                   {produit.quantite}
-                </ol>
+                </p>
                 <div className="price-button-container">
-                  <ol className="background-price">{produit.prix}€</ol>
+                  <p className="background-price">{produit.prix}€</p>
                   <button className="button-style" type="button">
                     Ajouter au panier
                   </button>
                 </div>
               </div>
             </div>
-          </li>
+          </p>
         ))}
-      </ul>
+      </div>
       {lightboxVisible && (
         <button type="button" className="lightbox" onClick={closeLightbox}>
           <img

@@ -1,5 +1,48 @@
 @use "./Variables.scss" as *;
 
-.test {
+.footer-container {
+  height: 21vh;
   background-color: $background-color-light;
+  border-top: solid 2px $background-color-dark;
+}
+.link-container {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0 20px;
+  margin-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid $background-color-dark;
+}
+.style-link {
+  text-decoration: none;
+  color: $text-color-dark;
+}
+.text-footer-container {
+  display: flex;
+  flex-direction: column;
+  p {
+    margin-left: 20px;
+    margin-top: 10px;
+    color: $text-color-dark;
+  }
+  a {
+    color: $text-color-dark;
+    font-weight: bold;
+    font-size: 1.1rem;
+  }
+}
+.react-icons-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  gap: 20px;
+}
+.icons-color {
+  color: $background-color-dark;
+}
+.icons-color:active {
+  color: $text-color-dark;
+}
+.icons-color:hover {
+  color: $text-color-dark;
 }

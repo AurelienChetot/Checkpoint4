@@ -19,6 +19,7 @@
   flex-direction: row;
   padding-bottom: 35px;
   border-bottom: solid 2px black;
+  align-items: center;
   .style-button-display {
     border: none;
     font: inherit;
@@ -81,4 +82,17 @@
 .product-name-style {
   font-weight: bold;
   color: $background-color-light;
+}
+
+@media only screen and (min-width: 1080px) {
+  .list-product-container {
+    margin: 10vh 25vw;
+    img {
+      width: 15vw;
+      height: 190px;
+    }
+  }
+  .text-container {
+    margin-left: 9vw;
+  }
 }

@@ -8,8 +8,21 @@ export default function Login() {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
   const notifyUser = () =>
-    toast("Vous êtes connecter vous allez être redirigé");
-  const notifyError = () => toast("Votre compte n'est pas bon !");
+    toast("Vous êtes connecter vous allez être redirigé", {
+      style: {
+        border: "solid 2px #000000",
+        backgroundColor: "#82313C",
+        color: "#ffffff",
+      },
+    });
+  const notifyError = () =>
+    toast("Votre compte n'est pas bon !", {
+      style: {
+        border: "solid 2px #000000",
+        backgroundColor: "#82313C",
+        color: "#ffffff",
+      },
+    });
 
   const handleValidation = async (e) => {
     e.preventDefault();
