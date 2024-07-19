@@ -71,8 +71,12 @@
   border-radius: 5px;
   border: solid 1px $background-color-dark;
   background-color: $background-color-light;
+  cursor: pointer;
 }
 .button-style:active {
+  background-color: $background-color-light-click;
+}
+.button-style:hover {
   background-color: $background-color-light-click;
 }
 .text-style-span {

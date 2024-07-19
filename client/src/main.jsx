@@ -1,5 +1,6 @@
 import ReactDOM from "react-dom/client";
 import axios from "axios";
+// import { jwtDecode } from "jwt-decode";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
@@ -12,6 +13,7 @@ import ListeProduits from "./pages/ListeProduits";
 import Login from "./pages/Login";
 import Account from "./pages/Account";
 import Profil from "./pages/Profil";
+import Error404 from "./pages/Error404";
 
 const router = createBrowserRouter([
   {
@@ -21,6 +23,10 @@ const router = createBrowserRouter([
   {
     path: "/Account",
     element: <Account />,
+  },
+  {
+    path: "/*",
+    element: <Error404 />,
   },
   {
     element: <App />,
@@ -42,6 +48,22 @@ const router = createBrowserRouter([
       {
         path: "/listeproduits/:id",
         element: <ListeProduits />,
+        loader: async () => {
+          try {
+            const token = localStorage.getItem("token");
+            if (!token) {
+              // eslint-disable-next-line no-throw-literal
+              throw {
+                message:
+                  "Vous devez etre connecter pour acceder à cette page ❌",
+              };
+            }
+            return null;
+          } catch (error) {
+            console.error(error);
+            throw error;
+          }
+        },
       },
       {
         path: "/profil/:id",

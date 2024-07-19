@@ -93,6 +93,9 @@ export default function Login() {
         <Link className="link-style" to="/Account">
           <p className="no-account-style">Pas de compte ? Enregistrez-vous</p>
         </Link>
+        <Link to="/" className="link-style">
+          <p className="no-account-style">Retournez sur l'accueil</p>
+        </Link>
         <Toaster />
       </div>
     </form>

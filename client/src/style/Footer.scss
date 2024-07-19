@@ -17,6 +17,9 @@
   text-decoration: none;
   color: $text-color-dark;
 }
+.style-link:hover {
+  color: $background-color-dark;
+}
 .text-footer-container {
   display: flex;
   flex-direction: column;
@@ -29,6 +32,9 @@
     color: $text-color-dark;
     font-weight: bold;
     font-size: 1.1rem;
+  }
+  a:hover {
+    color: $background-color-dark;
   }
 }
 .react-icons-container {
